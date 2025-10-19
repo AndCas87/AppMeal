@@ -16,4 +16,12 @@ public class IndexController {
 
         return "index";
     }
+
+    @GetMapping("index") // root webapp
+    public String getWelcome2(Model model) {
+        model.addAttribute("intestazione", "Benvenuti nell'index page");
+        model.addAttribute("saluti", saluti);
+
+        return "index";
+    }
 }
