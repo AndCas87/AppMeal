@@ -1,5 +1,6 @@
 package com.diet.appmeal.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -11,13 +12,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class LoginController {
 
+@Autowired
 private AuthenticationService authSrv;
-
-
-
-public LoginController(AuthenticationService authSrv) {
+/*
+ * 
+ public LoginController(AuthenticationService authSrv) {
     this.authSrv = authSrv;
 }
+*/
 
 @GetMapping("/login")
 public String getLogin(Model model) {
