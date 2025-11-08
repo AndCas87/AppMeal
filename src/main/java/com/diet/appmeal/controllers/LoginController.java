@@ -11,13 +11,26 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class LoginController {
 
+private AuthenticationService authSrv;
+
+
+
+public LoginController(AuthenticationService authSrv) {
+    this.authSrv = authSrv;
+}
+
 @GetMapping("/login")
 public String getLogin(Model model) {
     return "login";
 }
 
-@PostMappinging("/login")
+@PostMapping("/login")
 public String goToWelcomePage(@RequestParam String name,@RequestParam String password,ModelMap map) {
+    
+    if (authSrv.auth(name, password)) {
+        map.put("name",name);
+        return "welcome";
+    }
     return "login";
 }
 
