@@ -69,6 +69,38 @@
 
     <h2 style="text-align: center;margin: 0px auto;display; block;color: red;padding-bottom: 1em;">Inserisci le specifiche di autenticazione</h2>
 
+    <form action="/login" method="post">
+	          
+		          <div class="form-group">
+		              <input type="text" class="form-control" name="name" id="name" placeholder="Nome Utente">
+		          </div>
+		          
+		          <div class="form-group">
+		              <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+		          </div>
+		          
+		          <div class="form-group">
+		               <input class="btnSubmit" type="submit">
+		          </div>
+		          
+		          <div class="form-group">
+		               <a href="#" class="ForgetPwd">Password Dimenticata?</a>
+		          </div>
+		          
+		          <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+		          
+		           <c:if test="${param.error != null}">
+		                <div class="alert alert-danger">
+		                  <p><spring:message code="form.login.errlogin.label"/></p>
+		                </div>
+		           </c:if>
+		           <c:if test="${param.logout == true}">
+		                <div class="alert alert-info">
+		                    <p><spring:message code="form.login.infologout.label"/></p>
+		                </div>
+		           </c:if>
+		            
+	           </form>
    
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>  
