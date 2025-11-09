@@ -67,8 +67,7 @@
     </nav>
 
 
-    <h1 style="text-align: center;margin: 0px auto;display; block;color: red;padding-bottom: 1em;">Benvenuti in AppMeal</h1>
-    <h3 style="text-align: center;margin: 0px auto;display; block;color: green;">Saluti ${name}, clicca <a href="/alimenti">qui</a> per visualizzaer gli alimenti disponibili</h3>   
+    <h3 style="text-align: center;margin: 0px auto;display; block;color: green;">Saluti ${name}, questi sono gli alimenti disponibili</h3>   
 
    
     <!-- Latest compiled JavaScript -->
